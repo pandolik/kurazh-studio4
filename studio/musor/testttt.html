@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>000</title>
+</head>
+<body>
+<section class="section__main">
+    <div class="main__wrapper">
+        <div class="main__body">
+            <div class="main__left">
+                <div class="main__logo"><img src="kurazh.png" alt="logotype"></div>
+                <div class="main__info">
+                    <span class="main__title">Кіностудія КУРАЖ</span>
+                    <div class="main__text">
+                        <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
+                    <div class="main__btns">
+                        <a href="#" class="main-btn__about main__btn">Про Кiностудiю</a>
+                        <a href="https://www.youtube.com/@kurazh_studio" class="main-btn__more main__btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="28.88" fill="red" viewBox="0 0 576 512"><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/></svg><span>Всі фільми кіностудії на нашому каналі в YouTube</span></a>
+                    </div>
+                </div>
+           </div>
+        </div>
+        <div class="main__right">
+                <div class="main__icon-container">
+                    <div class="main__icon" id="main__icon"></div>
+                </div>
+           </div>
+    </div>
+</section>
+
+<style>
+@import url("reset.css");
+
+.main__left,
+.main__right {
+    flex: 1;
+    width: 100%;
+}
+
+.main__left {
+    float: left;
+}
+
+.main__right {
+    float: right;
+    max-width: 30%;
+}
+
+.main__icon-container {
+    perspective: 500px;
+}
+
+.main__icon {
+    width: 200px;
+    height: 200px;
+    background-image: url('foxy2-removebg-preview.png');
+    background-size: cover;
+    transform-style: preserve-3d;
+    transition: transform 0.1s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    background-color: transparent;
+}
+
+.page {
+    flex: 1 1 auto;
+    margin-bottom: 80px;
+}
+
+.section__main {
+    position: relative;
+}
+
+.section__main:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url('background3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(2px);
+}
+
+.main__wrapper {
+    margin: 115px 0 0px 90px;
+    max-width: 1230px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.main__body {
+    max-width: 800px;
+    height: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.main__logo {
+    margin: 0 0 20px 0;
+    border: solid #fff 5px;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    animation: fallFromTop 1.5s ease forwards;
+}
+
+@keyframes fallFromTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.main__logo img {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    border-radius: 50%;
+    display: block;
+}
+
+.main__title {
+    font-size: clamp(28px, 8vw, 72px);
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideFromRight 1.5s ease forwards, dissolveIn 2s ease forwards;
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes dissolveIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.main__text {
+    font-size: clamp(14px, 4vw, 18px);
+    margin: 40px 0;
+}
+
+.main__text p {
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideFromBottom 1.5s ease forwards;
+}
+
+@keyframes slideFromBottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.main__btns {
+    display: flex;
+}
+
+.main__btns a {
+    text-align: center;
+}
+
+.main__btn {
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideFromBottom 1.5s ease forwards;
+    font-family: AvenirNext;
+}
+
+.main-btn__about {
+    margin: 0 40px 20px 0;
+    padding: 20px 40px;
+    background-color: #fff;
+    color: #000;
+    font-size: 18px;
+    width: 260px;
+}
+
+.main-btn__about:hover {
+    color: #fff;
+    background-color: #333;
+    transition: background 0.5s;
+}
+
+.main-btn__more {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    margin: 0 0 20px;
+    font-size: 16px;
+    width: 320px;
+    text-align: justify;
+}
+
+.main-btn__more span {
+    max-width: 80%;
+    position: relative;
+    text-align: left;
+}
+
+.main-btn__more svg {
+    float: left;
+    max-width: 15%;
+    position: relative;
+    top: 9px;
+}
+
+.main-btn__more:hover {
+    background-color: #333;
+    transition: background 0.3s;
+}
+</style>
+
+<script>
+document.addEventListener('mousemove', (event) => {
+    const icon = document.getElementById('main__icon');
+    const rect = icon.getBoundingClientRect();
+    const iconCenterX = rect.left + rect.width / 2;
+    const iconCenterY = rect.top + rect.height / 2;
+
+    const deltaX = event.clientX - iconCenterX;
+    const deltaY = event.clientY - iconCenterY;
+
+    const rotateX = -deltaY / 20;
+    const rotateY = deltaX / 40;
+
+    icon.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+});
+</script>
+</body>
+</html>
