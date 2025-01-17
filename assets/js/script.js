@@ -376,33 +376,65 @@ document.getElementById('about__button').addEventListener('click', function(even
 //         });
 //     }
 
-function handleFormSubmit(event) {
-    if (!checkConsent()) {
-        event.preventDefault(); 
-        return false;
-    }
+    // function handleFormSubmit(event) {
+    //     if (!checkConsent()) {
+    //         event.preventDefault(); 
+    //         return false;
+    //     }
 
-    copyText(); 
-    return true;
-}
+    //     copyText(); 
+    //     return true;
+    // }
 
-function checkConsent() {
-    if (!document.getElementById('consentCheckbox').checked) {
-        alert("Будь ласка, підтвердіть згоду з політикою конфіденційності та умовами використання.");
-        return false; 
-    }
-    return true; 
-}
+    // function checkConsent() {
+    //     if (!document.getElementById('consentCheckbox').checked) {
+    //         alert("Будь ласка, підтвердіть згоду з політикою конфіденційності та умовами використання.");
+    //         return false; 
+    //     }
+    //     return true; 
+    // }
 
-function copyText() {
-    var textToCopy = document.getElementById('message').value;
-    navigator.clipboard.writeText(textToCopy).then(function() {
-        // alert('Текст успішно скопійовано!');
-        return null
-    }).catch(function(error) {
-        console.error('Помилка при копіюванні тексту: ', error);
-    });
-}
+    // function copyText() {
+    //     var textToCopy = document.getElementById('message').value;
+    //     navigator.clipboard.writeText(textToCopy).then(function() {
+    //         // alert('Текст успішно скопійовано!');
+    //         return null
+    //     }).catch(function(error) {
+    //         console.error('Помилка при копіюванні тексту: ', error);
+    //     });
+    // }
 
+
+
+        function handleFormSubmit(event) {
+                if (!checkConsent()) {
+                    event.preventDefault();
+                    return false;
+                }
+
+                copyText();
+                return true;
+            }
+
+            function checkConsent() {
+                if (!document.getElementById('consentCheckbox').checked) {
+                    alert("Будь ласка, підтвердіть згоду з політикою конфіденційності та умовами використання.");
+                    return false;
+                }
+                return true;
+            }
+
+            function copyText() {
+                var textToCopy = document.getElementById('message').value;
+                navigator.clipboard.writeText(textToCopy).then(function() {
+                    // alert('Текст успішно скопійовано!');
+                    return null
+                }).catch(function(error) {
+                    console.error('Помилка при копіюванні тексту: ', error);
+                });
+            }
+
+            document.querySelector('.feedback-form form').addEventListener('submit', handleFormSubmit);
 
 });
+
