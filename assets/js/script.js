@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
 
 // ICON ARROW
-const arrowTop = document.getElementById('arrowTop');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        arrowTop.style.display = 'flex';
-    } else {
-        arrowTop.style.display = 'none';
-    }
-});
-arrowTop.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    const arrowTop = document.getElementById('arrowTop');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            arrowTop.style.display = 'flex';
+        } else {
+            arrowTop.style.display = 'none';
+        }
     });
-});
+    arrowTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 
 // Open menu
     document.addEventListener('click', documentClick);
@@ -301,19 +301,19 @@ const contactBodySections = document.querySelectorAll('.contact__body');
     }, observerOptions);
 
     observer.observe(document.querySelector('.info__wrapper'));
-});
 
 
 
 
 
-// Privacy & Secrity
-const consentCheckbox = document.getElementById('consent');
-const submitButton = document.getElementById('submit');
 
-consentCheckbox.addEventListener('change', () => {
-    submitButton.disabled = !consentCheckbox.checked;
-});
+// // Privacy & Secrity
+// const consentCheckbox = document.getElementById('consent');
+// const submitButton = document.getElementById('submit');
+
+// consentCheckbox.addEventListener('change', () => {
+//     submitButton.disabled = !consentCheckbox.checked;
+// });
 
 
 
@@ -373,29 +373,32 @@ document.getElementById('team__button-movie').addEventListener('click', function
 //     }
 
 function handleFormSubmit(event) {
-        if (!checkConsent()) {
-            event.preventDefault(); 
-            return false;
-        }
-
-        copyText(); 
-        return true;
+    if (!checkConsent()) {
+        event.preventDefault(); 
+        return false;
     }
 
-    function checkConsent() {
-        if (!document.getElementById('consentCheckbox').checked) {
-            alert("Будь ласка, підтвердіть згоду з політикою конфіденційності та умовами використання.");
-            return false; 
-        }
-        return true; 
-    }
+    copyText(); 
+    return true;
+}
 
-    function copyText() {
-        var textToCopy = document.getElementById('message').value;
-        navigator.clipboard.writeText(textToCopy).then(function() {
-            // alert('Текст успішно скопійовано!');
-            return null
-        }).catch(function(error) {
-            console.error('Помилка при копіюванні тексту: ', error);
-        });
+function checkConsent() {
+    if (!document.getElementById('consentCheckbox').checked) {
+        alert("Будь ласка, підтвердіть згоду з політикою конфіденційності та умовами використання.");
+        return false; 
     }
+    return true; 
+}
+
+function copyText() {
+    var textToCopy = document.getElementById('message').value;
+    navigator.clipboard.writeText(textToCopy).then(function() {
+        // alert('Текст успішно скопійовано!');
+        return null
+    }).catch(function(error) {
+        console.error('Помилка при копіюванні тексту: ', error);
+    });
+}
+
+
+});
