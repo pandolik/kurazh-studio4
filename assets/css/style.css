@@ -1903,7 +1903,7 @@
     }
 
 /*Privacy & Security*/
-#consent {
+#consentCheckbox {
     font-size: 12px;
     line-height: 22.5px;
     font-weight: 500;
@@ -1933,10 +1933,13 @@ gmp-map {
     height: 482px;
 }
 .contact-list {
-  list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   padding-right: 20px;
   color: #fff;
 }
+
 .list-item__contact {
   line-height: 4;
   color: #aaa;
