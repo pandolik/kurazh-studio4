@@ -586,12 +586,11 @@
     }
 }
 @media (max-width: 767.98px) {
-    .main__wrapper {
-        margin-top: 40px;
-    }
+    /*.main__wrapper {margin-top: 40px;}*/
     .main__btns {
         flex-direction: column;
-        flex: 1;}
+        flex: 1;
+    }
 }
 @media (max-width: 449.98px) {
     .main__body {
@@ -606,14 +605,14 @@
         white-space: normal;
         line-height: 20px;
         text-align: left;
-}
-.main-btn__about {
-    padding: 15px 20px;
-    text-align: center;
-}
-.main-btn__more {
-    padding: 15px 0;
-}
+    }
+    .main-btn__about {
+        padding: 15px 20px;
+        text-align: center;
+    }
+    .main-btn__more {
+        padding: 15px 0;
+    }
 }
 /*Горизонтальні лінії*/
 .curved-line-2 {
@@ -673,22 +672,19 @@
 
 @media (min-width: 1716.98px) {.player__video {height: 70vh !important; }}
 @media (max-width: 1200.98px) {
-.player {
-    width: 90%;
-}
+    .player {
+        width: 90%;
+    }
 }
 @media (max-width: 991.98px) {
-.classes {
-    margin: auto 0;
-}
-.player {
-/*    width: 100%;*/
-}
+    .classes {
+        margin: auto 0;
+    }
 }
 @media (max-width: 449px) {
-.classes {
-    margin: 0 0 12px 0;
-}
+    .classes {
+        margin: 0 0 12px 0;
+    }
 }
 /*-----------------------------ABOUT US SECTION-----------------------------*/
 .about-us__wrapper {
