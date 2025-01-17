@@ -338,6 +338,10 @@ document.getElementById('team__button-movie').addEventListener('click', function
     event.preventDefault(); 
     alert('Упс... Стаття не готова. Приносимо вибачення');
 });
+document.getElementById('about__button').addEventListener('click', function(event) {
+    event.preventDefault(); 
+    alert('Упс... Стаття не готова. Приносимо вибачення');
+});
 
 
 
